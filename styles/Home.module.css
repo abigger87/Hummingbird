@@ -59,7 +59,11 @@
   .leftDiv {
     position: relative;
     top: 0;
-    min-height: calc(100vh - 100px);
+    padding-top: 1em;
+    /* min-height: calc(100vh - 100px); */
+  }
+  .rightDiv {
+    padding-top: 1em;
   }
   .gridContainer {
     display: flex;

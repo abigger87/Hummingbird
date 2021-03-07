@@ -25,8 +25,8 @@ const Home = () => {
       <main className={main}>
         <div className={gridContainer}>
           <div className={leftDiv}>
-            <div style={{ margin: "auto" }}>
-              <GiHummingbird color={"currentColor"} size={40} />
+            <div style={{ margin: "0 auto" }}>
+              <GiHummingbird color={"currentColor"} size={100} />
             </div>
             <h1 className={title}>Hummingbird</h1>
 
