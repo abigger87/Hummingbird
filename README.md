@@ -1,6 +1,7 @@
 # Hummingbird
 
 ![Build](https://github.com/nascentxyz/Hummingbird/workflows/Build/badge.svg)
+![Publish](https://github.com/nascentxyz/Hummingbird/workflows/Publish/badge.svg)
 ![Lint](https://github.com/nascentxyz/Hummingbird/workflows/Lint/badge.svg)
 
 Smart contract interaction tool. Connect and interact with localhost smart contracts.
