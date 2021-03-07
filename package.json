@@ -19,8 +19,7 @@
     "preversion": "yarn lint",
     "version": "yarn format && git add -A .",
     "postversion": "git push && git push --tags",
-    "reversion": "npm --no-git-tag-version version minor",
-    "husky": "npx husky install"
+    "reversion": "npm --no-git-tag-version version minor"
   },
   "resolutions": {
     "styled-components": "^5"

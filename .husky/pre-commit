@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-prettier --write ../../
-prettier --check ../../
+yarn format
+yarn lint
 git add -A .
 
