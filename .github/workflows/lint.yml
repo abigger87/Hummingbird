@@ -3,16 +3,16 @@ name: Lint
 on: [pull_request]
 
 jobs:
-    e2e-and-unit:
-        runs-on: ubuntu-16.04
-        steps:
-            - uses: actions/checkout@v2
+  e2e-and-unit:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Install dependencies
-              run: yarn
+      - name: Install dependencies
+        run: yarn
 
-            - name: Format
-              run: yarn format
+      - name: Format
+        run: yarn format
 
-            - name: Lints with solium
-              run: yarn lint
+      - name: Lints with solium
+        run: yarn lint
