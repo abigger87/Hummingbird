@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-prettier --write ../../ && prettier --check ../../ && git add -A .
+yarn format && prettier --check ../../ && git add -A .
 
