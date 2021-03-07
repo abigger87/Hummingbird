@@ -43,5 +43,17 @@
     "@types/react": "^17.0.2",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint && npm --no-git-tag-version version minor && git add ."
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
