@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Head, Header, QueryList, Roadrunner } from "../components";
+import { Head, Header, ContractList } from "../components";
 import {
   container,
   main,
@@ -30,10 +30,13 @@ const Home = () => {
             </div>
             <h1 className={title}>Hummingbird</h1>
 
-            <p className={description}>Simple interface to query The Graph.</p>
+            <p className={description}>
+              Smart contract interaction tool. Connect and interact with
+              localhost smart contracts.
+            </p>
           </div>
           <div className={rightDiv}>
-            <QueryList />
+            <ContractList />
           </div>
         </div>
       </main>

@@ -1,6 +1,6 @@
 {
   "name": "nascent-hummingbird",
-  "version": "0.7.0",
+  "version": "0.9.0",
   "author": "Andreas Bigger <abigger@nascent.xyz>",
   "description": "Smart contract interaction tool. Connect and interact with localhost smart contracts.",
   "homepage": "https://github.com/nascent/Hummingbird",
