@@ -2,5 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 yarn format
 yarn lint
+npm --no-git-tag-version version minor
 git add -A .
 
