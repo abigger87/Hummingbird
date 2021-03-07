@@ -1,6 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-prettier --write ../../
-prettier --check ../../
+yarn format
+yarn lint
+npm --no-git-tag-version version minor
 git add -A .
 

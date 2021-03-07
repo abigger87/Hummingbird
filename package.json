@@ -1,6 +1,6 @@
 {
   "name": "nascent-hummingbird",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "Andreas Bigger <abigger@nascent.xyz>",
   "description": "Smart contract interaction tool. Connect and interact with localhost smart contracts.",
   "homepage": "https://github.com/nascent/Hummingbird",
@@ -19,8 +19,7 @@
     "preversion": "yarn lint",
     "version": "yarn format && git add -A .",
     "postversion": "git push && git push --tags",
-    "reversion": "npm --no-git-tag-version version minor",
-    "husky": "npx husky install"
+    "reversion": "npm --no-git-tag-version version minor"
   },
   "resolutions": {
     "styled-components": "^5"
@@ -43,5 +42,17 @@
     "@types/react": "^17.0.2",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint && npm --no-git-tag-version version minor && git add ."
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
