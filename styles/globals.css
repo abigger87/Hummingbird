@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.dark-mode {
+  color: #fbfbfc;
+  background: #050505;
+}
+
+body.light-mode {
+  color: #050505;
+  background: #eff0f5;
+}
+
+.MuiFormLabel-root {
+  color: currentColor !important;
+  border-color: currentColor !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: currentColor !important;
+  color: currentColor !important;
+}
