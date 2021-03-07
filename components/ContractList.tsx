@@ -2,7 +2,7 @@ import { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { grid, card, searchBar } from "../styles/components";
 
-const apis = ["Compound", "Maker", "Aave", "Cream"];
+const apis = ["Contract 1 on localhost"];
 
 const ContractList = () => {
   const [filter, setFilter] = useState("");
