@@ -10,6 +10,9 @@ import {
   gridContainer,
 } from "../styles";
 import { GiHummingbird } from "react-icons/gi";
+import { useToasts } from "react-toast-notifications";
+import { useDetectAdBlock } from "adblock-detect-react";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.bg.primary};
@@ -17,6 +20,25 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const { addToast } = useToasts();
+  const adBlockDetected = useDetectAdBlock();
+  const [turnedOff, setTurnedOff] = useState(true);
+
+  useEffect(() => {
+    console.log("ad block detected: ", adBlockDetected);
+    if (adBlockDetected) {
+      setTurnedOff(false);
+      addToast("Please turn off your adblocker to allow client connections!", {
+        appearance: "error",
+      });
+    } else if (!turnedOff) {
+      setTurnedOff(true);
+      addToast("Thank you for turning off your adblocker!", {
+        appearance: "success",
+      });
+    }
+  }, [adBlockDetected]);
+
   return (
     <Container className={container}>
       <Head />
