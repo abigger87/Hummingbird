@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { Head, Header, ContractList } from "../components";
+import { Head, Header, ContractList, Toast } from "../components";
 import {
   container,
   main,
@@ -10,40 +9,26 @@ import {
   gridContainer,
 } from "../styles";
 import { GiHummingbird } from "react-icons/gi";
-import { useToasts } from "react-toast-notifications";
-import { useDetectAdBlock } from "adblock-detect-react";
-import { useEffect, useState } from "react";
-
-const Container = styled.div`
-  background-color: ${(props) => props.theme.bg.primary};
-  color: ${(props) => props.theme.text.primary};
-`;
+import React, { useEffect, useState } from "react";
+import { AdBlockDetectedWrapper } from "adblock-detect-react";
 
 const Home = () => {
-  const { addToast } = useToasts();
-  const adBlockDetected = useDetectAdBlock();
-  const [turnedOff, setTurnedOff] = useState(true);
-
+  const [toastNotifications, setToastNotifications] = useState(<></>);
   useEffect(() => {
-    console.log("ad block detected: ", adBlockDetected);
-    if (adBlockDetected) {
-      setTurnedOff(false);
-      addToast("Please turn off your adblocker to allow client connections!", {
-        appearance: "error",
-      });
-    } else if (!turnedOff) {
-      setTurnedOff(true);
-      addToast("Thank you for turning off your adblocker!", {
-        appearance: "success",
-      });
-    }
-  }, [adBlockDetected]);
+    setTimeout(() => {
+      setToastNotifications(
+        <AdBlockDetectedWrapper>
+          <Toast />
+        </AdBlockDetectedWrapper>
+      );
+    }, 1000);
+  }, []);
 
   return (
-    <Container className={container}>
+    <div className={container}>
       <Head />
       <Header />
-
+      {toastNotifications}
       <main className={main}>
         <div className={gridContainer}>
           <div className={leftDiv}>
@@ -62,7 +47,7 @@ const Home = () => {
           </div>
         </div>
       </main>
-    </Container>
+    </div>
   );
 };
 
